@@ -42,11 +42,11 @@ variable "ext_port" {
 
 }
 
-variable "int_port" {
+variable "int_port" {  
   type    = number
   default = 1880
 
-  validation {
+  validation {                          # validation help to keeps int_port value same as 1880. If it gets changed in default, it will throw error_message.
     condition     = var.int_port == 1880
     error_message = "The internal port must be 1880."
   }
