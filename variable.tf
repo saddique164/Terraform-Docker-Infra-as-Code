@@ -48,7 +48,7 @@ variable "int_port" {
 
   validation {                          # validation help to keeps int_port value same as 1880. If it gets changed in default, it will throw error_message.
     condition     = var.int_port == 1880
-    error_message = "The internal port must be 1880."
+    error_message = "The internal port must be 1880."   # The "T" must be capital and there should be comma in the end.
   }
 }
 
