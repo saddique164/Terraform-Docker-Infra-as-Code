@@ -6,7 +6,8 @@
 
 module "image" {
   source = "./image"
-  # image_in= var.image[terraform.workspace]
+  # image_in= var.image[terraform.workspace]    # workspace helps to define the environment like dev and prod. Terraform.workspace brings the env which are being selected by
+                                                # terraform workspace select prod. New environment command is terraform workspace new prod.
   for_each = local.deployment
   image_in = each.value.image
   # image_in= var.image["nodered"][terraform.workspace]
