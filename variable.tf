@@ -1,12 +1,12 @@
 
-# variable "env" {
-
+# variable "env" {    # the env is used to take the variables from terraform.tfvar file and pass it to the code for relevant environment like dev and prod.
+                       
 #   type =  string
 #   default = "dev"
 #   description = "Env to deploy to"
 #   }
 
-variable "image" {
+variable "image" {             #This helps to find the images mapping in lookup command. example lookup (var.image,"dev"). It will pick nodered/node-red:latest image.
   type        = map(any)
   description = "Image for the different env"
 
