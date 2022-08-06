@@ -1,3 +1,5 @@
+# In variable.tf file, we can't define or take the reference to the any value like count=length(ext_port). It will throw error. So to easy way to do it to define loca
+# variables. Then you can refer them like local.ext_port.
 locals {
   deployment = {
 
