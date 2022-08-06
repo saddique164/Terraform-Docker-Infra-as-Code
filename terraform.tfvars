@@ -1,5 +1,6 @@
 # this file is used to define variable values for different region and repositories or environments and later you can call it in variable.tf files.
-# If you need to use the different files like west.tfvar, you can use it. Then you call user "terraform apply --var-file west.tfvar" to utilize those values 
+# If you need to use the different files like west.tfvar, you can use it. Then you call user "terraform apply --var-file west.tfvar" to utilize those values.
+# The values in these files are hidden. Only in variable.tf file use "sensitive=true" in definition of same variable and it will hide it for you.
 ext_port = {
 
   nodered = {
