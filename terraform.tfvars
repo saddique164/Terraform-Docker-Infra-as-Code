@@ -4,7 +4,7 @@
 ext_port = {
 
   nodered = {
-    dev  = [1980]
+    dev  = [1980]    # The brackets show that it is in list type. It helps to create two replicas of container.
     prod = [1880]
   }
 
