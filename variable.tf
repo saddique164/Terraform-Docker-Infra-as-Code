@@ -32,7 +32,8 @@ variable "ext_port" {
   type = map(any)
   #  sensitive = true
   # validation {
-  #   condition = max(var.ext_port["dev"]...) <= 65535 && min(var.ext_port["dev"]...) >= 1980
+  #   condition = max(var.ext_port["dev"]...) <= 65535 && min(var.ext_port["dev"]...) >= 1980    #min and max value take the list from variable.ext_port and varify it in the
+                                                                                                 # same range. "..." is very important to taking the value out of "[]".
   #   error_message = "The external port must be between the range 65535 to 0."
   # }
   # validation {
