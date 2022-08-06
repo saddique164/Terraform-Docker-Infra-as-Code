@@ -2,7 +2,7 @@
 # variable "env" {    # the env is used to take the variables from terraform.tfvar file and pass it to the code for relevant environment like dev and prod.
                        
 #   type =  string
-#   default = "dev"
+#   default = "dev"        # By default this value will pass. however, terraform plan -var="env=prod" will pass prod value to the code.
 #   description = "Env to deploy to"
 #   }
 
