@@ -28,11 +28,11 @@ module "image" {
 
 module "container" {
   source = "./container"
-  # depends_on = [null_resource.dockervol]
+  # depends_on = [null_resource.dockervol]  # Create PV and PVC before container to run it normally. Otherwise, it throws error that pvc not found. Expilcit dependency.
   count_in = each.value.container_count
   for_each = local.deployment
   # count = local.container_count
-  # name_in = join("-",["nodered",terraform.workspace,random_string.random[count.index].result])
+  # name_in = join("-",["nodered",terraform.workspace,random_string.random[count.index].result]) # if we add null_resource.dockervol between workspace and random string, it is called implicit dependency.
   #   name_in = join("-",[each.key,terraform.workspace,random_string.random[each.key].result])
   name_in = each.key
   # image_in = module.nodered_image.image_out
